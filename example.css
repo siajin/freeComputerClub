@@ -1,0 +1,104 @@
+/* */
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+
+
+/* */
+
+.list{
+    background-color:  aqua;
+    min-width: 250px;;
+    padding-top: 10px;
+    padding-left: 10px;
+    float: left;
+}
+
+.content{
+    background-color: aquamarine;
+    width: 100%;
+    text-align: center;
+}
+
+.box{
+    position: relative;
+    width: 850px;
+    height: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.per, .per svg{
+    position: relative;
+    width: 850px;
+    height: 850px;
+}
+
+.per svg circle{
+    transform: translate(5px, 5px);
+    fill: transparent;
+    stroke-width: 40;
+    stroke: #000;
+    stroke-linecap: round;
+    stroke-dasharray: 1565;
+}
+
+.per .stop{
+    stroke-dashoffset: var(--end);
+    stroke: #03a9f4;
+    display: none;
+}
+
+.per .show{
+    stroke-dashoffset: 1565;
+    stroke: #03a9f4;
+    animation: dash 1s linear;
+}
+
+@keyframes dash{
+    100% {
+        stroke-dashoffset: var(--end);
+    }
+}
+
+.per .shadow{
+    stroke-dashoffset: 0;
+    stroke: #f3f3f3;
+}
+
+.per .num{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.per .num h2{
+    font-size: 30px;
+}
+
+.per .num h2 span{
+    font-size: 30px;
+}
+
+.box .text{
+    font-weight: 700;
+    letter-spacing: 1px;
+}
