@@ -21,7 +21,6 @@ body {
     margin: 0;
 }
 
-
 /* */
 
 .content{
@@ -33,7 +32,6 @@ body {
     position: relative;
     width: 600px;
     height: 600px;
-    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -50,7 +48,7 @@ body {
     stroke-width: 50;
     stroke: #000;
     stroke-linecap: round;
-    stroke-dasharray: 1565;
+    stroke-dasharray: 630;
 }
 
 .per .stop{
@@ -60,7 +58,7 @@ body {
 }
 
 .per .show{
-    stroke-dashoffset: 1565;
+    stroke-dashoffset: 630;
     stroke: #52BEA4;
     animation: dash 1s linear;
 }
@@ -95,10 +93,11 @@ body {
 .box .text{
     font-weight: 700;
     letter-spacing: 1px;
-    align-items: flex-end;
+    top: 50px;
 }
 
 /* topBar */
+
 .topBar{
     position: relative;
     border-bottom: 1px solid black;
@@ -110,7 +109,7 @@ body {
     font-size: 20px;
 }
 
-.topBar div a{
+.topBar div #sign{
     position: relative;
     padding-left: 15px;
     right: 30px;
@@ -121,42 +120,25 @@ body {
     float: right;
 }
 
-/* list */
-nav ul{
-    margin: 0;
-    padding-left: 30px;
-}
-
-nav li{
-    padding-bottom: 30px;
-    list-style: none;
-    font-size: 25px;
-}
-
-nav li a{
+.topBar div .title{
+    position: relative;
+    padding-left: 15px;
+    padding-right: 20px;
+    top: -22.5px;
     text-decoration: none;
     color: black;
-}
-
-nav li:last-child{
-    padding-top: 15px;
-    padding-bottom: 0;
-}
-
-nav #title a{
-    font-size: 30px;
+    float: left;
+    font-size: 40px;
     font-weight: 1000;
 }
 
-nav #title{
-    padding-top: 20px;
-    padding-bottom: 70px;
-}
-
-.list{
-    border:1px solid black;
-    border-right: 0;
-    min-width: 250px;;
+.topBar div #nav{
+    position: relative;
+    padding-left: 110px;
+    top: -12.5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
     float: left;
 }
 
@@ -169,13 +151,9 @@ nav #title{
     font-size: 50px;
 }
 
-@media (max-width: 1400px) {
-    .list{
-        display: none;
-    }
-
-    .icon-menu{
-        display: block;
+@media (max-width: 1300px) {
+    .topBar div #nav{
+        padding-left: 35px;
     }
 
     svg circle{
@@ -197,6 +175,14 @@ nav #title{
 }
 
 @media (max-width: 900px) {
+    .topBar div #nav, .topBar div .title{
+        display: none;
+    }
+
+    .icon-menu{
+        display: block;
+    }
+
     svg circle{
         transform: scale(0.6, 0.6);
     }
