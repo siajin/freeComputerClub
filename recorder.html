@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="recorder.css">
+    <title>recorder</title>
+</head>
+<body>
+    <nav class="list">
+        <ul>
+            <li id="title"><a href="home.html">WEBest</a></li>
+            <li><a href="" class="icon-calendar-2">계획표</a></li>
+            <li><a href="" class="icon-box">보관함</a></li>
+            <li><a href="recorder.html" class="icon-sticky-note-o">기록</a></li>
+            <li><a href="" class="icon-sliders">설정</a></li>
+        </ul>
+    </nav>
+    <a class="icon-menu"></a>
+    <div class="content">
+        <div class="topBar">
+            <div> 
+                <a class="login" href="" id="sign">로그인</a>
+                <a class="login" href="" id="sign">회원가입</a>
+                <a href="home.html" class="title">WEBest</a>
+                <a href="" class="icon-calendar-2" id="nav">계획표</a>
+                <a href="" class="icon-box" id="nav">보관함</a>
+                <a href="recorder.html" class="icon-sticky-note-o" id="nav">기록</a>
+                <a href="" class="icon-sliders" id="nav">설정</a>
+            </div>
+        </div>
+        <div class="time">
+            <form>
+                목표 공부 시간: <input type="text" id="goal_time" value="150" onkeyup="setGoal()">
+            </form>
+            <form>
+                현재 공부 시간: <input type="text" id="current_time" onkeyup="setTime()">
+            </form>
+        </div>
+    </div>
+    <script src="recorder.js"></script>
+</body>
+</html>

@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="example.css">
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="fontello-embedded.css">
-    <script src="example.js"></script>
-    <title>Document</title>
+    <title>home</title>
 </head>
 <body>
     <nav class="list">
         <ul>
-            <li id="title"><a href="">WEBest</a></li>
-            <li><a href="" class="icon-home-outline">홈</a></li>
+            <li id="title"><a href="home.html">WEBest</a></li>
             <li><a href="" class="icon-calendar-2">계획표</a></li>
             <li><a href="" class="icon-box">보관함</a></li>
-            <li><a href="" class="icon-sticky-note-o">기록</a></li>
+            <li><a href="recorder.html" class="icon-sticky-note-o">기록</a></li>
             <li><a href="" class="icon-sliders">설정</a></li>
         </ul>
     </nav>
@@ -23,8 +21,13 @@
     <div class="content">
         <div class="topBar">
             <div> 
-                <a class="login" href="">로그인</a>
-                <a class="login" href="">회원가입</a>
+                <a class="login" href="" id="sign">로그인</a>
+                <a class="login" href="" id="sign">회원가입</a>
+                <a href="home.html" class="title">WEBest</a>
+                <a href="" class="icon-calendar-2" id="nav">계획표</a>
+                <a href="" class="icon-box" id="nav">보관함</a>
+                <a href="recorder.html" class="icon-sticky-note-o" id="nav">기록</a>
+                <a href="" class="icon-sliders" id="nav">설정</a>
             </div>
         </div>
         <div class="box">
@@ -38,8 +41,15 @@
                     <h2 class="count"></h2>
                 </div>
             </div>
-            <h2 class="text">Progress</h2>
+            <h2 class="text">진행도</h2>
+        </div>
+        <div class="time">
+            <div class="text">목표 공부 시간</div>
+            <div class="num" id="goal"></div>
+            <div class="text">현재 공부 시간</div>
+            <div class="num" id="current"></div>
         </div>
     </div>
+    <script src="home.js"></script>
 </body>
 </html>

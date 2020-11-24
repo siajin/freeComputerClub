@@ -21,83 +21,34 @@ body {
     margin: 0;
 }
 
-/* */
-
 .content{
     border: 1px solid black;
     width: 100%;
+    min-width: 500px;
 }
 
-.box{
+
+/* time */
+.time{
     position: relative;
-    width: 600px;
-    height: 600px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    padding-top: 180px;
+    padding-left: 300px;
+    
 }
 
-.per, .per svg{
-    position: relative;
-    width: 600px;
-    height: 600px;
+.time form{
+    padding-bottom: 80px;
+    font-size: 40px;
 }
 
-.per svg circle{
-    fill: transparent;
-    stroke-width: 50;
-    stroke: #000;
-    stroke-linecap: round;
-    stroke-dasharray: 10;
+.time input{
+    font-size: 38px;
+    width: 70px;
+    border: 0;
 }
 
-.per .stop{
-    stroke-dashoffset: var(--end);
-    stroke: #52BEA4;
-    display: none;
-}
-
-.per .show{
-    stroke-dashoffset: 10;
-    stroke: #52BEA4;
-    animation: dash 1s linear;
-}
-
-@keyframes dash{
-    100% {
-        stroke-dashoffset: var(--end);
-    }
-}
-
-.per .shadow{
-    stroke-dashoffset: 0;
-    stroke: #f3f3f3;
-}
-
-.per .num, .box .text{
-    margin: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 600px;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.per .num h2{
-    font-size: 80px;
-}
-
-.box .text{
-    font-weight: 700;
-    letter-spacing: 1px;
-    top: 50px;
-}
 
 /* topBar */
-
 .topBar{
     position: relative;
     border-bottom: 1px solid black;
@@ -121,6 +72,7 @@ body {
 }
 
 .topBar div .title{
+    display: none;
     position: relative;
     padding-left: 15px;
     padding-right: 20px;
@@ -133,6 +85,7 @@ body {
 }
 
 .topBar div #nav{
+    display: none;
     position: relative;
     padding-left: 110px;
     top: -12.5px;
@@ -150,8 +103,67 @@ body {
     left: 15px;
     font-size: 50px;
 }
+/* list */
+nav ul{
+    margin: 0;
+    padding-left: 30px;
+}
+
+nav li{
+    padding-bottom: 30px;
+    list-style: none;
+    font-size: 25px;
+}
+
+nav li a{
+    text-decoration: none;
+    color: black;
+}
+
+nav li:last-child{
+    padding-top: 15px;
+    padding-bottom: 0;
+}
+
+nav #title a{
+    font-size: 40px;
+    font-weight: 1000;
+}
+
+nav #title{
+    padding-top: 20px;
+    padding-bottom: 70px;
+}
+
+.list{
+    border:1px solid black;
+    border-right: 0;
+    min-width: 250px;;
+    float: left;
+}
+
+.icon-menu{
+    position: absolute;
+    display: none;
+    margin: 0;
+    top: 10px;
+    left: 15px;
+    font-size: 50px;
+}
 
 @media (max-width: 1300px) {
+    .topBar div #nav, .topBar div .title{
+        display: inline;
+    }
+
+    .list{
+        display: none;
+    }
+
+    .icon-menu{
+        display: block;
+    }
+
     .topBar div #nav{
         padding-left: 35px;
     }
@@ -172,15 +184,14 @@ body {
     .box .text{
         font-size: 20px;
     }
+    .time{
+        padding-left: 150px;
+    }
 }
 
 @media (max-width: 900px) {
-    .topBar div #nav, .topBar div .title{
-        display: none;
-    }
-
-    .icon-menu{
-        display: block;
+    .topBar div #nav{
+        padding-left: 25px;
     }
 
     svg circle{
@@ -198,5 +209,15 @@ body {
     
     .box .text{
         font-size: 15px;
+    }
+}
+
+@media (max-width: 700px) {
+    .topBar div #nav{
+        display: none;
+    }
+
+    .icon-menu{
+        display: block;
     }
 }

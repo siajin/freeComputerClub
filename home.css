@@ -21,19 +21,17 @@ body {
     margin: 0;
 }
 
-
-/* */
-
 .content{
     border: 1px solid black;
     width: 100%;
 }
 
+/* circle */
 .box{
     position: relative;
     width: 600px;
     height: 600px;
-    display: flex;
+    margin: 0;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -50,7 +48,7 @@ body {
     stroke-width: 50;
     stroke: #000;
     stroke-linecap: round;
-    stroke-dasharray: 1565;
+    stroke-dasharray: 1256;
 }
 
 .per .stop{
@@ -60,9 +58,9 @@ body {
 }
 
 .per .show{
-    stroke-dashoffset: 1565;
+    stroke-dashoffset: 1256;
     stroke: #52BEA4;
-    animation: dash 1s linear;
+    animation: dash 0.7s linear;
 }
 
 @keyframes dash{
@@ -72,7 +70,7 @@ body {
 }
 
 .per .shadow{
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 1256;
     stroke: #f3f3f3;
 }
 
@@ -80,7 +78,6 @@ body {
     margin: 0;
     position: absolute;
     top: 0;
-    left: 0;
     width: 600px;
     height: 600px;
     display: flex;
@@ -95,8 +92,24 @@ body {
 .box .text{
     font-weight: 700;
     letter-spacing: 1px;
-    align-items: flex-end;
+    top: 50px;
 }
+
+
+/* time */
+.time{
+    display: inline;
+    position: absolute;
+    top: 160px;
+    left: 940px;
+    font-size: 30px;
+}
+
+.time .num{
+    padding-bottom: 120px;
+    padding-top: 20px;
+}
+
 
 /* topBar */
 .topBar{
@@ -110,7 +123,7 @@ body {
     font-size: 20px;
 }
 
-.topBar div a{
+.topBar div #sign{
     position: relative;
     padding-left: 15px;
     right: 30px;
@@ -121,6 +134,38 @@ body {
     float: right;
 }
 
+.topBar div .title{
+    display: none;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 20px;
+    top: -22.5px;
+    text-decoration: none;
+    color: black;
+    float: left;
+    font-size: 40px;
+    font-weight: 1000;
+}
+
+.topBar div #nav{
+    display: none;
+    position: relative;
+    padding-left: 110px;
+    top: -12.5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    float: left;
+}
+
+.icon-menu{
+    position: absolute;
+    display: none;
+    margin: 0;
+    top: 10px;
+    left: 15px;
+    font-size: 50px;
+}
 /* list */
 nav ul{
     margin: 0;
@@ -144,12 +189,12 @@ nav li:last-child{
 }
 
 nav #title a{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 1000;
 }
 
 nav #title{
-    padding-top: 20px;
+    padding-top: 15px;
     padding-bottom: 70px;
 }
 
@@ -169,7 +214,11 @@ nav #title{
     font-size: 50px;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1300px) {
+    .topBar div #nav, .topBar div .title{
+        display: inline;
+    }
+
     .list{
         display: none;
     }
@@ -178,8 +227,17 @@ nav #title{
         display: block;
     }
 
+    .topBar div #nav{
+        padding-left: 35px;
+    }
+
     svg circle{
         transform: scale(0.8, 0.8);
+    }
+
+    .per, .per svg{
+        width: 480px;
+        height: 480px;
     }
 
     .per .num, .box .text{
@@ -187,18 +245,37 @@ nav #title{
         height: 480px;
     }
 
-    .per .num h2{
+    .box, .per .num h2{
         font-size: 64px;
     }
     
     .box .text{
         font-size: 20px;
     }
+
+    .time{
+        left: 570px;
+        font-size: 25px;
+    }
+
+    .time .num{
+        padding-bottom: 80px;
+        padding-top: 15px;
+    }
 }
 
 @media (max-width: 900px) {
+    .topBar div #nav{
+        padding-left: 25px;
+    }
+
     svg circle{
         transform: scale(0.6, 0.6);
+    }
+
+    .box, .per, .per svg{
+        width: 360px;
+        height: 360px;
     }
 
     .per .num, .box .text{
@@ -213,4 +290,25 @@ nav #title{
     .box .text{
         font-size: 15px;
     }
+
+    .time{
+        left: 410px;
+        font-size: 20px;
+    }
+
+    .time .num{
+        padding-bottom: 50px;
+        padding-top: 10px;
+    }
 }
+
+@media (max-width: 700px) {
+    .topBar div #nav{
+        display: none;
+    }
+
+    .icon-menu{
+        display: block;
+    }
+}
+
